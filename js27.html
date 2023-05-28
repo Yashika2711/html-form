@@ -1,0 +1,113 @@
+<html>
+<head>
+<style>
+    *{
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+    }
+
+    h1{
+        background-color: blanchedalmond;
+    }
+
+    th{
+        padding: 3px0;
+        background-color: beige;
+    }
+
+    tr{
+        padding: 3px0;
+        background-color: blanchedalmond
+    }
+
+    #button{
+        border-radius: 4px;
+        font-family: 'Courier New', Courier, monospace;
+        background-color: blanchedalmond;
+        font-size: medium;
+        font-weight: bold;
+    }
+
+    table{
+        text-align: center;
+        width: 100%;
+    }
+</style>
+</head>
+
+<body>
+<div class="main">
+<h1>Please Enter Student's details:</h1></br>
+Student Id: <input type="text" placeholder="Student Id" id="phone"></br></br>
+Student Name: <input type="text" placeholder="Student name" id="name"></br></br>
+Student Email: <input type="text" placeholder="Student email" id="email"></br></br>
+Student Subject: <input type="text" placeholder="Student subject" id="subject"></br></br>
+Student Marks: <input type="text" placeholder="Student marks" id="marks">
+<br>
+<br>
+
+<div>
+<button id="button" onclick="add()"> Add student</button>
+</div>
+</br>
+</br>
+
+<div class="tables">
+<table>
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>Email</th>
+<th>Subject</th>
+<th>Marks</th>
+</tr>
+</table>
+</div>
+</div>
+
+<script type="text/javascript">
+function add(){
+var name=document.getElementById("name");
+var email=document.getElementById("email");
+var phone=document.getElementById("phone");
+var subject=document.getElementById("subject");
+var marks=document.getElementById("marks");
+
+var sphone=phone.value;
+var sname=name.value;
+var semail=email.value;
+var ssubject=subject.value;
+var smarks=marks.value;
+
+if(sname!='' && semail!='' && sphone!='' && ssubject!=''){
+let table =document.querySelector('table');
+let tr=document.createElement('tr');
+let tdphone=document.createElement('td');
+let tdname=document.createElement('td');
+let tdemail=document.createElement('td');
+let tdsubject=document.createElement('td');
+let tdmarks=document.createElement('td');
+
+tdphone.innerHTML=sphone;
+tdname.innerHTML=sname;
+tdemail.innerHTML=semail;
+tdsubject.innerHTML=ssubject;
+tdmarks.innerHTML=smarks;
+
+tr.appendChild(tdphone);
+tr.appendChild(tdname);
+tr.appendChild(tdemail);
+tr.appendChild(tdsubject);
+tr.appendChild(tdmarks);
+table.appendChild(tr);
+}
+
+else{
+alert("Please enter all details");
+}
+}
+
+
+</script>
+</body>
+</html>
